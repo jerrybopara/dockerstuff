@@ -7,15 +7,4 @@
 
 - Just rename the **sample_.env** to **.env** and update the variables as per your need.
 - docker-compose.yml - includes MySql, WordPress, a Custom Network, and .env support.
-- 
-
-├── conf.d
-├── docker
-│   ├── conf.d
-│   │   └── mysqld.cnf
-│   ├── Dockerfile-MariaDB
-│   ├── Dockerfile-MySql
-│   └── init.sql
-├── docker-compose.yml
-├── README.md
-└── sample_.env
+- Database configuration file's are in - docker/conf.d/ 
