@@ -16,3 +16,10 @@ These samples provide a statrting point for - How to integrate & setup different
 ## Samples of Docker Compose applications with multiple integrated services - 
 
 - [`WordPress / MySQL / MariaDB`](https://github.com/jerrybopara/dockerstuff/tree/main/wordpress-mysql-mariadb) - Sample WordPress application with MySql/MariaDB server databases.
+
+
+
+<!--lint disable awesome-toc-->
+## Getting started
+
+These Settings will walk you through the basic journey of setting up applications and different services in containerized environment.
