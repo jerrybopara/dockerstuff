@@ -8,3 +8,8 @@ These samples provide a statrting point for - How to integrate & setup different
 > Each folder contains the instructions of its service/application setup. 
 > Each folder having docker-compose.yml and sample_.env. 
 > Further setup instructions are given in folder indivisual README.md. 
+
+
+## Samples of Docker Compose applications with multiple integrated services - 
+
+- [`WordPress / MySQL / MariaDB`](https://github.com/jerrybopara/dockerstuff/tree/main/wordpress-mysql-mariadb) - Sample WordPress application with MySql/MariaDB server databases.
