@@ -1,6 +1,6 @@
 # dockerstuff - A Collection of sample Docker Compose files.
 
-![logo](batch_pic.jpg)
+![logo](repo_logo.png)
 
 > A List of Docker Compose & .env samples - 
 
