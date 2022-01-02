@@ -1,7 +1,8 @@
 # dockerstuff - A Collection of sample Docker Compose files.
 
 ![logo](repo_logo.png)
-@octocat :+1: This PR looks great - it's ready to merge! :shipit:
+
+@octocat :+1: Hey !! Docker Compose :) :shipit:
 
 
 > A List of Docker Compose & .env samples - 
