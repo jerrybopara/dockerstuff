@@ -2,7 +2,7 @@
 
 ![logo](repo_logo.png)
 
-@octocat :+1: Hey !! Docker Compose :) :shipit:
+@Jerry Bopara :+1: Hey !! Docker Compose :) :shipit:
 
 
 > A List of Docker Compose & .env samples - 
