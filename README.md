@@ -1,4 +1,7 @@
 # dockerstuff - A Collection of sample Docker Compose files.
+
+![logo](batch_pic.jpg)
+
 > A List of Docker Compose & .env samples - 
 
 These samples provide a statrting point for - How to integrate & setup different services & applications using docker-compose and custom .env's. 
