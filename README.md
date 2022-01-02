@@ -23,3 +23,14 @@ These samples provide a statrting point for - How to integrate & setup different
 ## Getting started
 
 These Settings will walk you through the basic journey of setting up applications and different services in containerized environment.
+
+### Prerequisites
+
+- Make sure that you have Docker and Docker Compose installed
+  - Windows or macOS:
+    [Install Docker Desktop](https://www.docker.com/get-started)
+  - Linux: [Install Docker](https://www.docker.com/get-started) and then
+    [Docker Compose](https://github.com/docker/compose)
+
+- Download some or all of the samples from this repository.
+  (https://github.com/jerrybopara/dockerstuff)
