@@ -11,10 +11,10 @@
 - MariaDB Custom Configuration file - docker/MariaDB/conf.d/my_custom.cnf 
 
 ### Container Services & DockerFile 
- 1 - db 
+ 1. db 
    - [Base MySql Image - mysql:5.7.36](https://hub.docker.com/_/mysql)
    - [Base MariaDB Image - mariadb:latest](https://hub.docker.com/_/mariadb)
 
- 2 - wordpress
-   _ [Base WordPress Image](https://hub.docker.com/_/wordpress)
-   _ Built on [PHP:7.4-apache](https://hub.docker.com/_/php)
+ 2. wordpress
+   - [Base WordPress Image](https://hub.docker.com/_/wordpress)
+   - Built on [PHP:7.4-apache](https://hub.docker.com/_/php)
