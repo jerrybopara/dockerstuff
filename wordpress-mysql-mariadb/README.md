@@ -17,4 +17,4 @@
 
  2. wordpress
     - [Base WordPress Image](https://hub.docker.com/_/wordpress)
-    - Built on [PHP:7.4-apache](https://hub.docker.com/_/php)
+        - Built on [PHP:7.4-apache](https://hub.docker.com/_/php)
