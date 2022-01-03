@@ -3,7 +3,7 @@ services:
   db:
     build:
       context: .
-      dockerfile: ./docker/${DB_Engine}/${Database_DockerFile}
+      dockerfile: ./docker/${DB_Engine}/Dockerfile-${DB_Engine}
       args:
         DB_Root_Password: "${DB_Root_Password}"
     container_name: ${DB_Container}
