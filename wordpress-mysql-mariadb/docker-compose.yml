@@ -1,9 +1,9 @@
 version: "3"
 services:
   db:
-    build: 
+    build:
       context: .
-      dockerfile: ./docker/${Database_DockerFile}
+      dockerfile: ./docker/${DB_Engine}/${Database_DockerFile}
       args:
         DB_Root_Password: "${DB_Root_Password}"
     container_name: ${DB_Container}
@@ -19,7 +19,7 @@ services:
     volumes:
      # - ${Project_Root}/docker/database/MariaDB/db_data:/var/lib/mysql
       - ./${DB_VolumePath}/${DB_Container}-${DB_Engine}:/var/lib/mysql  
-      - ./conf.d:/etc/mysql/mysql.conf.d
+      - ./docker/${DB_Engine}/conf.d/my_custom.cnf:/etc/mysql/conf.d/my_custom.cnf
   
   wordpress:
     depends_on:
