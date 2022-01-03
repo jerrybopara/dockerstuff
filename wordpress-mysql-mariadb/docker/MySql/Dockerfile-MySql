@@ -12,7 +12,7 @@ RUN apt-get install openssh-server openssh-client vim net-tools -y
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
 RUN mkdir /db/
 
-# Passing Root Password to local .mycf
+# Passing Root Password to local ~/.my.cnf
 ARG DB_Root_Password
 RUN echo "[client]\n"\
 "user=root\n"\
