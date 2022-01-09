@@ -18,7 +18,7 @@ These samples provide a statrting point for - How to integrate & setup different
 ## Samples of Docker Compose applications with multiple integrated services - 
 
 - [`WordPress / MySQL / MariaDB`](https://github.com/jerrybopara/dockerstuff/tree/main/wordpress-mysql-mariadb) - Sample WordPress application with MySql/MariaDB server databases.
-- [`PHP74 + Apache2.4`](https://github.com/jerrybopara/dockerstuff/tree/main/php7.4-apache2) - Web Server - PHP, Apache.
+- [`PHP74 + Apache2.4`](https://github.com/jerrybopara/dockerstuff/tree/main/php7.4-apache2) - Web Server - PHP & Apache.
 
 
 <!--lint disable awesome-toc-->
