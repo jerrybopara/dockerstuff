@@ -1,0 +1,12 @@
+version: "3"
+services:
+  apache-php:
+      build: 
+        context: .
+        dockerfile: ./docker/${ApacheDockerFile}
+      container_name: ${ContainerName}  
+      ports:
+        - "8080:80"
+      volumes:
+        - ./${WebDir}:/var/www/html
+        - ./docker/php.ini:/usr/local/etc/php/php.ini

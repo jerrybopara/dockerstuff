@@ -1,0 +1,10 @@
+.metadata
+*.tmp
+*.bak
+*.swp
+*~.nib
+.env
+DB_Data
+WPSite_Data
+DB_Volumes
+public_html

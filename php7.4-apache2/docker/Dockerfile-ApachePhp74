@@ -1,0 +1,53 @@
+# Image PHP 7.4 Apache
+FROM php:7.4-apache
+
+# Enable the Rewrite Apache mod
+RUN cd /etc/apache2/mods-enabled && \
+    ln -s ../mods-available/rewrite.load
+
+# install the PHP extensions 
+RUN set -ex; \
+	\
+	savedAptMark="$(apt-mark showmanual)"; \
+	\
+	apt-get update; \
+	apt-get install -y --no-install-recommends \
+		libfreetype6-dev \
+		libjpeg-dev \
+		libmagickwand-dev \
+		libpng-dev \
+		libwebp-dev \
+		libzip-dev \
+		libonig-dev \
+		libxslt-dev \
+	; \
+	\
+	docker-php-ext-configure gd \
+		--with-freetype \
+		--with-jpeg \
+		--with-webp \
+	; \
+	docker-php-ext-install -j "$(nproc)" \
+		bcmath \
+		exif \
+		mysqli \
+		zip \
+		intl \
+		pdo_mysql \
+		bz2 \
+		mbstring \
+		pdo_mysql \
+		soap \
+		sockets \
+		xsl \
+	;
+
+# Installing build-essential
+RUN apt-get install -y build-essential
+
+# Install vim editor
+RUN apt-get install -y vim
+RUN echo "alias ll='ls -l'" >> ~/.bashrc
+
+# Copy HTTP server config
+COPY ./docker/000-default.conf /etc/apache2/sites-available/
