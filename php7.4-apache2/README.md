@@ -23,14 +23,14 @@ ContainerName=WebHost01
 # Location of Web Directory 
 WebDir=public_html
 
-# DockerFile to build the Image [Dockerfile-ApachePhp56 & Dockerfile-ApachePhp74]
-ApacheDockerFile=Dockerfile-ApachePhp74
+# Choose PHP Verison - php74 OR php56
+PHP=php74
 ```
 
 - php Configuration file - ./docker/php.ini 
 - DockerFile's 
-   - ./docker/Dockerfile-ApachePhp74
-   - ./docker/Dockerfile-ApachePhp56 
+   - ./docker/Dockerfile-php56
+   - ./docker/Dockerfile-php74
 
 ## Container Services & DockerFile 
  1. PHP 
