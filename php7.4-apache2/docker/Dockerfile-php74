@@ -59,5 +59,6 @@ RUN apt-get install -y build-essential
 RUN apt-get install -y vim
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
 
+RUN mkdir /etc/apache2/SSL_CERTS
 # Copy HTTP server config
 # COPY ./docker/000-default.conf /etc/apache2/sites-available/
