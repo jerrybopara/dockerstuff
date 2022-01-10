@@ -11,3 +11,4 @@ public_html
 logs
 logs/*
 SSL_CERTS
+SSL_CERTS/*
