@@ -4,7 +4,7 @@
 FROM mariadb:latest
 
 LABEL version="MariaDB-v1.0"
-LABEL description="MariaDB Server - ProductJack"
+LABEL description="MariaDB Local Server"
 
 # Install Packages
 RUN apt-get update 
