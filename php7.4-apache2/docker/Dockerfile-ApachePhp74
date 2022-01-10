@@ -42,6 +42,9 @@ RUN set -ex; \
 		xsl \
 	;
 
+RUN pecl install mongodb \
+&& docker-php-ext-enable mongodb
+
 # Installing build-essential
 RUN apt-get install -y build-essential
 
