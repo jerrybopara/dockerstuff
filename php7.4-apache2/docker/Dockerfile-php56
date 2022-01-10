@@ -1,8 +1,12 @@
 # Use PHP 5.6 with Apache for the base image
 FROM php:5.6-apache
 
-LABEL ImageName="PHP56-APache2"
+LABEL ImageName="PHP74-APache2"
 LABEL Maintainer="jerrybopara@gmail.com"
+
+# --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') - use this while building an image. 
+ARG BUILD_DATE
+LABEL org.label-schema.build-date=$BUILD_DATE
 
 # Enable the Rewrite Apache mod
 RUN cd /etc/apache2/mods-enabled && \
