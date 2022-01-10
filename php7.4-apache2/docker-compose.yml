@@ -1,7 +1,7 @@
 version: "3"
 services:
   apache-php:
-      build: 
+      build:
         context: .
         dockerfile: ./docker/Dockerfile-${PHP}
       image: ${PHP}-Apache2:latest
