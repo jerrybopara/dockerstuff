@@ -4,7 +4,7 @@ services:
       build: 
         context: .
         dockerfile: ./docker/Dockerfile-${PHP}
-      image: PHP-Apache2:tag  
+      image: ${PHP}-Apache2:latest
       container_name: ${ContainerName}  
       ports:
         - "8080:80"
