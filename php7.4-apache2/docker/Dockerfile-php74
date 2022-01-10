@@ -4,6 +4,12 @@ FROM php:7.4-apache
 LABEL ImageName="PHP74-APache2"
 LABEL Maintainer="jerrybopara@gmail.com"
 
+
+# --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') - use this while building an image. 
+ARG BUILD_DATE
+LABEL org.label-schema.build-date=$BUILD_DATE
+
+
 # Enable the Rewrite Apache mod
 RUN cd /etc/apache2/mods-enabled && \
     ln -s ../mods-available/rewrite.load
