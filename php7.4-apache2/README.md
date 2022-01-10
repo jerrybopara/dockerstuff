@@ -7,7 +7,7 @@
 
 - Just rename the **sample_.env** to **.env** and update the variables as per your need.
 - docker-compose.yml 
-   - Includes Service: Apache-php, Exposed Port 8080 & Custom Network.
+   - Includes Service: Apache-php, Exposed Port 80,443 & Custom Network.
    - .env environment variable's
       - ContainerName 
       - WebDir 
