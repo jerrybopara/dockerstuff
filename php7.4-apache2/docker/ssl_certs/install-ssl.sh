@@ -6,4 +6,5 @@ chmod a+x mkcert
 mv mkcert /usr/local/bin/
 mkcert -CAROOT
 cd /etc/apache2/ssl_certs
+
 mkcert localhost 127.0.0.1 ::1

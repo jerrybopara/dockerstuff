@@ -35,6 +35,6 @@ RUN echo "alias ll='ls -l'" >> ~/.bashrc
 RUN mkdir /etc/apache2/ssl_certs
 
 # Copying mkcert install script and setting up SSL/
-COPY ./docker/install-ssl.sh /etc/apache2/ssl_certs/
-RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
-	./install-ssl.sh 
+# COPY ./docker/install-ssl.sh /etc/apache2/ssl_certs/
+# RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
+# 	./install-ssl.sh 
