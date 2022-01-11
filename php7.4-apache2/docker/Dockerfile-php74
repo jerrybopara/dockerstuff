@@ -54,7 +54,7 @@ RUN set -ex; \
 		xsl \
 	;
 
-# Install wget netstat etc
+# Install vim wget netstat etc
 RUN apt-get install -y vim wget net-tools
 
 # Installing mkcert - to generate self sign SSL Certificate's.
@@ -70,7 +70,3 @@ RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
 # Installing MongoDB
 RUN pecl install mongodb \
 && docker-php-ext-enable mongodb
-
-# Copy HTTP server config
-# COPY ./docker/000-default.conf /etc/apache2/sites-available/
-

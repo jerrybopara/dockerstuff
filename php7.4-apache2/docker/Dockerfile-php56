@@ -12,23 +12,29 @@ LABEL org.label-schema.build-date=$BUILD_DATE
 RUN cd /etc/apache2/mods-enabled && \
     ln -s ../mods-available/rewrite.load
 
+# Enabling the Mod SSL - 
+RUN a2enmod ssl
+
 # Install required PHP extensions
 # -- GD
 RUN apt-get update && \
     apt-get install -y libfreetype6-dev && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ && \
     docker-php-ext-install -j$(nproc) gd
+
 # -- MySql
 RUN docker-php-ext-install -j$(nproc) mysql pdo_mysql
 RUN apt-get install mongodb
 
-# -- Vim
-# Install vim editor
-RUN apt-get install -y vim wget
+# Install vim wget netstat etc
+RUN apt-get install -y vim wget net-tools
+
+# Installing mkcert - to generate self sign SSL Certificate's.
+RUN apt-get install -y libnss3-tools
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
-RUN mkdir /etc/apache2/SSL_CERTS
+RUN mkdir /etc/apache2/ssl_certs
 
-
-# Copy HTTP server config
-# COPY ./docker/000-default.conf /etc/apache2/sites-available/
-
+# Copying mkcert install script and setting up SSL/
+COPY ./docker/install-ssl.sh /etc/apache2/ssl_certs/
+RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
+	./install-ssl.sh 
