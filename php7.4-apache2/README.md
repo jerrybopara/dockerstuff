@@ -47,28 +47,27 @@ Local_Network=My_Local_Network
     - [Base Image - php:7.4-apache](https://hub.docker.com/_/php)
 
 
- 2.  **DockerFile's** 
-   - ./docker/Dockerfile-php56
-   - ./docker/Dockerfile-php74
+ 2. **DockerFile's** 
+    - ./docker/Dockerfile-php56
+    - ./docker/Dockerfile-php74
 
-- **Apache Virtual Host Config File [Includes SSL Vhost as well]** 
-   - ./docker/000-default.conf 
+    - Apache Virtual Host Config File [Includes SSL Vhost as well]
+      - ./docker/000-default.conf 
 
-- **SSL Certificate (Self Singed SSL Certificate's)**
-   > NOTE: I'm using Self-Singed SSL Certificate in this demostration. Creating locally trusted SSL Certificates
+ 3. **SSL Certificate (Self Singed SSL Certificate's)**
+     > NOTE: I'm using Self-Singed SSL Certificate in this demostration. Creating locally trusted SSL Certificates
    with [**MKCERT**](https://github.com/FiloSottile/mkcert)
 
-   - SSL Directory: 
-   - Shell Script Install & Configure [**MKCERT**](https://github.com/FiloSottile/mkcert) 
-   - ./docker/install-ssl.sh 
-
-   ```
-   # Copying mkcert install script (install-ssl.sh) and setting up SSL.
-   
-   COPY ./docker/install-ssl.sh /etc/apache2/ssl_certs/
-   RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
-	./install-ssl.sh 
-   ```   
+    - SSL Directory: 
+    - Shell Script Install & Configure [**MKCERT**](https://github.com/FiloSottile/mkcert) 
+    - ./docker/install-ssl.sh 
+    
+     ```
+     # Copying mkcert install script (install-ssl.sh) and setting up SSL.
+     COPY ./docker/install-ssl.sh /etc/apache2/ssl_certs/
+     RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
+	  ./install-ssl.sh 
+     ```   
 
 ## Docker-Compose Build CMD with Build Date.
 ```
