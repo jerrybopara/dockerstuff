@@ -41,17 +41,24 @@ Local_Network=My_Local_Network
 ```
 
 - PHP Configuration file - ./docker/php.ini 
-- DockerFile's 
+
+## Container Services & DockerFile 
+ 1. **PHP Base Image**
+    - [Base Image - php:7.4-apache](https://hub.docker.com/_/php)
+
+
+ 2.  **DockerFile's** 
    - ./docker/Dockerfile-php56
    - ./docker/Dockerfile-php74
 
-- Apache Virtual Host Config File [Includes SSL Vhost as well]
+- **Apache Virtual Host Config File [Includes SSL Vhost as well]** 
    - ./docker/000-default.conf 
 
-
-- SSL Certificate (Self Singed SSL Certificate's)
-   > NOTE: I'm using SelfSinged SSL Certificate in this demostration. Creating locally trusted SSL Certificates
+- **SSL Certificate (Self Singed SSL Certificate's)**
+   > NOTE: I'm using Self-Singed SSL Certificate in this demostration. Creating locally trusted SSL Certificates
    with [**MKCERT**](https://github.com/FiloSottile/mkcert)
+
+   - SSL Directory: 
    - Shell Script Install & Configure [**MKCERT**](https://github.com/FiloSottile/mkcert) 
    - ./docker/install-ssl.sh 
 
@@ -62,10 +69,6 @@ Local_Network=My_Local_Network
    RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
 	./install-ssl.sh 
    ```   
-
-## Container Services & DockerFile 
- 1. PHP 
-    - [Base php-apache Image - php:7.4-apache](https://hub.docker.com/_/php)
 
 ## 
 ```
