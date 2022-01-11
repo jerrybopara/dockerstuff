@@ -70,7 +70,7 @@ Local_Network=My_Local_Network
 	./install-ssl.sh 
    ```   
 
-## 
+## Docker-Compose Build CMD with Build Date.
 ```
 $ docker-compose build --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ'
 ```
