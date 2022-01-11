@@ -14,7 +14,7 @@ $ docker-compose build --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ'
 ```
 
 - docker-compose.yml - Explanation & Guide to setup Self Singed SSL Certificate.
-   - Includes Service: Apache-php, Exposed Port 80,443 & Custom Network.
+   - Includes Service: Apache-php, Exposed Port 80,443 & Self Signed SSL & Custom Network.
    - .env environment Variable's
       ```
          # Container Name
