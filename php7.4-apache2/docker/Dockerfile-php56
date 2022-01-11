@@ -23,7 +23,8 @@ RUN docker-php-ext-install -j$(nproc) mysql pdo_mysql
 RUN apt-get install mongodb
 
 # -- Vim
-RUN apt-get install -y vim
+# Install vim editor
+RUN apt-get install -y vim wget
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
 RUN mkdir /etc/apache2/SSL_CERTS
 

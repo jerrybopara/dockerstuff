@@ -10,7 +10,9 @@ services:
         - "${HOST_HTTPS_PORT}:443"
       volumes:
         - ./${WebDir}:/var/www/html
+        - ./${SSL_VOLUME}:/etc/apache2/SSL_CERTS
         - ./docker/${APACHE_CONF}:/etc/apache2/sites-available/000-default.conf
         - ./docker/php.ini:/usr/local/etc/php/php.ini
         - ./${APACHE_LOG_VOLUME}:/var/log/apache2
-        
+
+   

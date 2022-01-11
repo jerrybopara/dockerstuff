@@ -8,9 +8,13 @@ LABEL Maintainer="jerrybopara@gmail.com"
 ARG BUILD_DATE
 LABEL org.label-schema.build-date=$BUILD_DATE
 
+
 # Enable the Rewrite Apache mod
 RUN cd /etc/apache2/mods-enabled && \
     ln -s ../mods-available/rewrite.load
+
+# Enabling the Mod SSL - 
+RUN a2enmod ssl
 
 # install the PHP extensions 
 RUN set -ex; \
@@ -18,6 +22,7 @@ RUN set -ex; \
 	savedAptMark="$(apt-mark showmanual)"; \
 	\
 	apt-get update; \
+	apt-get install -y build-essential; \
 	apt-get install -y --no-install-recommends \
 		libfreetype6-dev \
 		libjpeg-dev \
@@ -49,16 +54,23 @@ RUN set -ex; \
 		xsl \
 	;
 
+# Install wget netstat etc
+RUN apt-get install -y vim wget net-tools
+
+# Installing mkcert - to generate self sign SSL Certificate's.
+RUN apt-get install -y libnss3-tools
+RUN echo "alias ll='ls -l'" >> ~/.bashrc
+RUN mkdir /etc/apache2/ssl_certs
+
+# Copying mkcert install script and setting up SSL/
+COPY ./docker/install-ssl.sh /etc/apache2/ssl_certs/
+RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
+	./install-ssl.sh 
+
+# Installing MongoDB
 RUN pecl install mongodb \
 && docker-php-ext-enable mongodb
 
-# Installing build-essential
-RUN apt-get install -y build-essential
-
-# Install vim editor
-RUN apt-get install -y vim
-RUN echo "alias ll='ls -l'" >> ~/.bashrc
-
-RUN mkdir /etc/apache2/SSL_CERTS
 # Copy HTTP server config
 # COPY ./docker/000-default.conf /etc/apache2/sites-available/
+

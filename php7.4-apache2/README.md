@@ -14,10 +14,13 @@
 # Container Name
 ContainerName=WebHost01
 
+# Domain Name 
+DOMAIN=website1.localhost.com
+
 # Location of Web Directory 
 WebDir=public_html
 
-# Choose PHP Verison - php74 OR php56
+# Select the PHP Verison you needed - php74 OR php56
 PHP=php74
 
 # HTTP & HTTPS HOST PORTS
@@ -28,7 +31,7 @@ HOST_HTTPS_PORT=11443
 APACHE_CONF=000-default.conf
 
 # SSL Volume
-SSL_VOLUME=SSL_CERTS
+SSL_VOLUME=ssl_certs
 
 # Apache Log Directory 
 APACHE_LOG_VOLUME=logs
@@ -37,11 +40,34 @@ APACHE_LOG_VOLUME=logs
 Local_Network=My_Local_Network
 ```
 
-- php Configuration file - ./docker/php.ini 
+- PHP Configuration file - ./docker/php.ini 
 - DockerFile's 
    - ./docker/Dockerfile-php56
    - ./docker/Dockerfile-php74
 
+- Apache Virtual Host Config File [Includes SSL Vhost as well]
+   - ./docker/000-default.conf 
+
+
+- SSL Certificate (Self Singed SSL Certificate's)
+   > NOTE: I'm using SelfSinged SSL Certificate in this demostration. Creating locally trusted SSL Certificates
+   with [**MKCERT**](https://github.com/FiloSottile/mkcert)
+   - Shell Script Install & Configure [**MKCERT**](https://github.com/FiloSottile/mkcert) 
+   - ./docker/install-ssl.sh 
+
+   ```
+   # Copying mkcert install script (install-ssl.sh) and setting up SSL.
+   
+   COPY ./docker/install-ssl.sh /etc/apache2/ssl_certs/
+   RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
+	./install-ssl.sh 
+   ```   
+
 ## Container Services & DockerFile 
  1. PHP 
     - [Base php-apache Image - php:7.4-apache](https://hub.docker.com/_/php)
+
+## 
+```
+$ docker-compose build --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ'
+```
