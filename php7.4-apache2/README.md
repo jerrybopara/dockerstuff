@@ -74,7 +74,7 @@ $ docker-compose build --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ'
      ```   
      > By Default container got lauched with **HTTP** Only, but to enable the Self Signed SSL Certificate. 
 
-     > Just run the following commands and your self signed SSL got issued.
+     > Just run the following commands and your self signed SSL will be ready. **(Replace CONTAINER-ID with your real container ID)**
      ```
      $ docker exec -ti CONTAINER-ID bash -c "/etc/apache2/ssl_certs/install-ssl.sh"
      ``` 
