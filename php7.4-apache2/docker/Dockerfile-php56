@@ -22,7 +22,7 @@ RUN apt-get update && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ && \
     docker-php-ext-install -j$(nproc) gd
 
-# -- MySql
+# -- MySql & Mongodb
 RUN docker-php-ext-install -j$(nproc) mysql pdo_mysql
 RUN apt-get install mongodb
 
@@ -34,7 +34,6 @@ RUN apt-get install -y libnss3-tools
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
 RUN mkdir /etc/apache2/ssl_certs
 
-# Copying mkcert install script and setting up SSL/
-# COPY ./docker/install-ssl.sh /etc/apache2/ssl_certs/
-# RUN cd /etc/apache2/ssl_certs/ && chmod u+x install-ssl.sh && \
-# 	./install-ssl.sh 
+# Copying mkcert install script to container.
+COPY ./docker/ssl_certs/install-ssl.sh /etc/apache2/ssl_certs/
+RUN chmod a+x /etc/apache2/ssl_certs/install-ssl.sh

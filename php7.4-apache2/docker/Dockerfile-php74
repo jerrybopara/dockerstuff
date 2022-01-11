@@ -58,7 +58,7 @@ RUN set -ex; \
 RUN apt-get install -y vim wget net-tools
 
 # Installing mkcert - to generate self sign SSL Certificate's.
-RUN apt-get install -y libnss3-tools at
+RUN apt-get install -y libnss3-tools
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
 RUN mkdir /etc/apache2/ssl_certs
 
