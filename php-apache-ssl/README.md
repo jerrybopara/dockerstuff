@@ -12,6 +12,29 @@
 ```
 $ docker-compose build --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ'
 ```
+### Container File & Directory Structure - 
+```
+├── docker
+│   ├── 000-default.conf
+│   ├── Dockerfile-php56
+│   ├── Dockerfile-php74
+│   ├── php.ini
+│   └── ssl_certs
+│       ├── install-ssl.sh
+│       ├── localhost+2-key.pem
+│       └── localhost+2.pem
+├── docker-compose.yml
+├── logs
+│   ├── access.log
+│   ├── error.log
+│   └── other_vhosts_access.log
+├── public_html
+│   └── index.php
+├── README.md
+└── sample_.env
+```
+
+
 
 - docker-compose.yml - Explanation & Guide to setup Self Singed SSL Certificate.
    - Includes Service: Apache-php, Exposed Port 80,443 & Self Signed SSL & Custom Network.
