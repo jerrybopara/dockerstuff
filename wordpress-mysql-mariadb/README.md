@@ -17,5 +17,4 @@ oc## WordPress + MySql:5.7.36 + Dynamic ENV
     - [Base MariaDB Image - mariadb:latest](https://hub.docker.com/_/mariadb)
 
  2. wordpress
-    - [Base WordPress Image - wordpress:latest](https://hub.docker.com/_/wordpress)
-        - [Built on - PHP:7.4-apache](https://hub.docker.com/_/php)
+    - [Base WordPress Image - wordpress:latest](https://hub.docker.vcom/_/wordpress)
