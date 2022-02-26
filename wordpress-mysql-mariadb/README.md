@@ -34,6 +34,12 @@ docker
 
 ```
 
+> Directories Contains the WordPress Files & Database Volume.
+```
+ - public_html
+ - DB_Volumes
+```
+
 - docker-compose.yml - includes MySql, WordPress, a Custom Network, and .env support.
 ```
 - WordPress dockerfile - docker/Dockerfile-WordPress 
